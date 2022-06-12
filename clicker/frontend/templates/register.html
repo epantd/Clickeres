@@ -1,0 +1,10 @@
+es (9 sloc) 279 Bytes
+{% extends "base.html" %}
+{% block body %}
+  <form action="{% url 'register' %}" method="POST">
+      {% csrf_token %}
+      {{user_form.as_p}}
+      <button type="submit">Zaregistrirovatsa</button>
+    </form>
+    <a href="{% url 'login' %}">Zaregistrirovan?</a>
+{% endblock %}
