@@ -1,0 +1,17 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Impact, fantasy;
+    font-size: 35;
+
+    background-image: url(https://c.tenor.com/4hwmd07RKkcAAAAC/brawl-stars-%D1%8D%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%D0%B1%D1%80%D0%B0%D0%B2%D0%BB%D1%81%D1%82%D0%B0%D1%80%D1%81.gif);}
+
+.kub {
+margin: auto;
+      background-color: #EEDDFF;
+  border: 6px solid #7922CC;
+  border-radius: 25px;
+    padding: 10px;
+    width: 700px;
+}

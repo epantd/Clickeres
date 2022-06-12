@@ -9,20 +9,20 @@ class UserForm(forms.ModelForm):
 
     username = forms.CharField(
         max_length=20,
-        label='Имя пользователя',
-        widget=forms.TextInput(attrs={'placeholder': 'Вводи'}),
+        label='Имя бройлера',
+        widget=forms.TextInput(attrs={'placeholder': 'папа Примо'}),
     )
     password = forms.CharField(
         min_length=3,
         max_length=20,
         label='Пароль',
-        widget=forms.PasswordInput(attrs={'placeholder': 'Вводи пароль'}),
+        widget=forms.PasswordInput(attrs={'placeholder': 'сложная рыготня'}),
     )
     password_confirm = forms.CharField(
         min_length=3,
         max_length=20,
         label='Подтверждение пароля',
-        widget=forms.PasswordInput(attrs={'placeholder': 'Вводи пароль ещё'}),
+        widget=forms.PasswordInput(attrs={'placeholder': 'рыготня еще раз'}),
     )
 
     def clean(self):

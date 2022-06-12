@@ -1,10 +1,14 @@
-es (9 sloc) 279 Bytes
+<link rel="stylesheet" href="/static/css2.css" />
 {% extends "base.html" %}
 {% block body %}
-  <form action="{% url 'register' %}" method="POST">
+<body>
+<main class="kub" align="center">
+  <form action="{% url 'register' %}" method="POST" class="fon">
       {% csrf_token %}
       {{user_form.as_p}}
-      <button type="submit">Zaregistrirovatsa</button>
+      <button type="submit">Жмыхнуться</button>
     </form>
-    <a href="{% url 'login' %}">Zaregistrirovan?</a>
+    <a href="{% url 'login' %}">Опытный жмых?</a>
+    </main>
+    </body>
 {% endblock %}

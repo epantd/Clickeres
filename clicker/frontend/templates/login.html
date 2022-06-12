@@ -1,13 +1,18 @@
+<link rel="stylesheet" href="/static/css2.css" />
 {% extends "base.html" %}
 {% block body %}
   {% if invalid %}
     This user is invalid
   {% endif %}
-    <form action="{% url 'login' %}" method="POST">
+  <body>
+  <main class="kub" align="center">
+    <form action="{% url 'login' %}" method="POST" class="fon">
         {% csrf_token %}
         {{user_form.username}}
         {{user_form.password}}
-        <button type="submit">Voiti</button>
+        <button type="submit">Жмых</button>
       </form>
-      <a href="{% url 'register' %}">Ne zaregistrirovan?</a>
+      <a href="{% url 'register' %}">Тебя еще не жмыхнуло?</a>
+      </main>
+      </body>
 {% endblock %}
