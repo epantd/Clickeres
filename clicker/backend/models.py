@@ -39,11 +39,11 @@ class Boost(models.Model):
     default = 0, choices = BOOST_TYPE_CHOOICES,
     )
 
-    def levelup(self, coins):
-        if coins < self.price:
+    def levelup(self, current_coins):
+        if current_coins < self.price:
             return False
 
-        self.core.coins -= self.price
+        self.core.coins = current_coins - self.price
         self.core.click_power \
             += self.power * BOOST_TYPE_VALUES[self.type]['click_power_scale']
         self.core.auto_click_power \
@@ -54,7 +54,7 @@ class Boost(models.Model):
         self.level += 1
         self.power *= 2
         self.price \
-            *= self.price * BOOST_TYPE_VALUES[self.type]['price_scale']
+            += self.price * BOOST_TYPE_VALUES[self.type]['price_scale']
         self.save()
 
-        return old_boost_values,
+        return old_boost_values, self

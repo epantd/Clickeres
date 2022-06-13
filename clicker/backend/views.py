@@ -21,9 +21,7 @@ def index(request):
 @api_view(['GET'])
 def get_core(request):
     core = Core.objects.get(user=request.user)
-    return Response({
-        'core': CoreSerializer(core).data,
-        })
+    return Response({'core': CoreSerializer(core).data})
 
 
 @api_view(['POST'])
@@ -56,7 +54,7 @@ class BoostViewSet(viewsets.ModelViewSet):
         boost = self.queryset.get(pk=pk)
         levelup = boost.levelup(coins)
         if not levelup:
-            return Response({'error':'копи еще'})
+            return Response({'error':"копи еще"})
         old_boost_values, new_boost_values = levelup
         return Response({
             'old_boost_values': self.serializer_class(old_boost_values).data,
@@ -75,7 +73,7 @@ def register(request):
         return render(request, 'register.html', {'user_form': user_form})
 
     user_form = UserForm()
-    return render(request, 'register.html', {'user_form' : user_form})
+    return render(request, 'register.html', {'user_form': user_form})
 
 def user_login(request):
     user_form = UserForm()
@@ -95,4 +93,3 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('login')
-

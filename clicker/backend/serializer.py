@@ -1,7 +1,6 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
 from .models import Core, Boost
 
-
 class CoreSerializer(ModelSerializer):
     class Meta:
         model = Core
